@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
-import { HelperService, SERVER_BASE_URL } from '../../helper.service';
+import { SERVER_BASE_URL } from '../../helper.service';
 import { ToolsService } from '../tools.service';
 
 @Component({
@@ -20,9 +20,10 @@ export class GridComponent implements OnInit {
     }
 
   ];
-  isOpen:boolean;
+  isOpen: boolean;
 
-  constructor(private http: Http, public toolsService: ToolsService) { }
+  constructor(private http: Http, public toolsService: ToolsService) {
+  }
 
   ngOnInit() {
 

@@ -1,21 +1,21 @@
 /* tslint:disable:no-unused-variable */
-import {async, ComponentFixture, TestBed, inject, fakeAsync, tick} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 
-import { ProgressBarComponent} from './progress-bar.component';
-import {ProgressBarModule} from "./progress-bar.module";
-import {AnimationHelperService} from "../animation-helper.service";
+import { ProgressBarComponent } from './progress-bar.component';
+import { ProgressBarModule } from './progress-bar.module';
+import { AnimationHelperService } from '../animation-helper.service';
 
 describe('LoaderComponent', () => {
   let component: ProgressBarComponent;
   let fixture: ComponentFixture<ProgressBarComponent>;
-  let element: any, animationHelperService:AnimationHelperService;
+  let element: any, animationHelperService: AnimationHelperService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[ProgressBarModule],
+      imports: [ProgressBarModule],
       providers: [AnimationHelperService]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(inject([AnimationHelperService], (_animationHelperService: AnimationHelperService) => {
@@ -42,27 +42,25 @@ describe('LoaderComponent', () => {
 
   it('should isLoading be "true" when percent eq zero', () => {
     component.percent = 0;
-    component.ngOnChanges({percent: {}});
+    component.ngOnChanges({ percent: {} });
     expect(component.isLoading).toBeTruthy();
   });
 
 
   it('should isLoading be "false" when percent eq 100', () => {
     component.percent = 100;
-    component.ngOnChanges({percent: {}});
+    component.ngOnChanges({ percent: {} });
     expect(component.isLoading).toBeFalsy();
   });
 
   it('should animationHelperService precentChangesEmiter to call emit with percent changed', fakeAsync(() => {
     spyOn(animationHelperService.precentChangesEmiter, 'emit');
     component.percent = 75;
-    component.ngOnChanges({percent: {}});
+    component.ngOnChanges({ percent: {} });
     tick(601);
     fixture.detectChanges();
-    expect(animationHelperService.precentChangesEmiter.emit).toHaveBeenCalledWith(75)
+    expect(animationHelperService.precentChangesEmiter.emit).toHaveBeenCalledWith(75);
   }));
-
-
 
 
 });

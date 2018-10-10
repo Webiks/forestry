@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     this.loginService.loginCredential(this.login.email, this.login.password).subscribe(
       res => {
         // that.stateService.go(this.loginService.lastState[0], this.loginService.lastState[1]);
-        that.stateService.go("Welcome");
+        that.stateService.go('Welcome');
       },
       error => {
         that.errorMsg = error.json().message;

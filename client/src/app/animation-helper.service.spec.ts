@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
-import {AnimationHelperService} from "./animation-helper.service";
+import { inject, TestBed } from '@angular/core/testing';
+import { AnimationHelperService } from './animation-helper.service';
 
 describe('Service: AnimationRouting', () => {
   let animationHelperService: AnimationHelperService;

@@ -1,12 +1,13 @@
-body{
+body {
   background: rgb(234, 240, 254);
 }
+
 div.welcome {
   width: 100%;
   height: 100%;
   left: 0;
   top: 0;
-  h1{
+  h1 {
     text-align: center;
     //color: #9bb9ff;
     font-family: Ariel;
@@ -17,7 +18,7 @@ div.welcome {
     //text-decoration: underline;
     animation: from-top 0.5s;
   }
-  h3{
+  h3 {
     text-align: center;
     font-size: 32px;
     padding-top: 50px;
@@ -45,18 +46,18 @@ div.welcome {
       background-position: center center;
       border-radius: 5%;
       top: 0;
-        &:hover {
-          background-color: #b4caff;
-        }
+      &:hover {
+        background-color: #b4caff;
+      }
     }
-    .cesium{
-      left:0;
+    .cesium {
+      left: 0;
       &:hover {
         width: 33%;
       }
       background-image: url("../../assets/cesium-logo.png");
     }
-    .leaflet{
+    .leaflet {
       left: 35%;
       &:hover {
         top: -5%;
@@ -64,7 +65,7 @@ div.welcome {
       }
       background-image: url("../../assets/leafletjs.png");
     }
-    .openlayers{
+    .openlayers {
       right: 0;
       &:hover {
         width: 33%;
@@ -73,22 +74,26 @@ div.welcome {
     }
   }
 
-  footer{
+  footer {
     opacity: 0;
     margin: 10% 5%;
     animation: fadein 0.5s 0.5s;
   }
   @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   @keyframes from-top {
     from {
       padding-top: 0;
       opacity: 0;
     }
-    to
-    { padding-top: 125px;
+    to {
+      padding-top: 125px;
       opacity: 1;
     }
   }

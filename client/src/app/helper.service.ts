@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, URLSearchParams, Headers } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import 'rxjs/operator/map';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
@@ -48,7 +48,7 @@ export class HelperService {
     return new Observable<any>(obs => {
       this.http.get(`${SERVER_BASE_URL}/${url}/tilemapresource.xml`).toPromise().then(response => {
         // xml2js.parseString(response['_body'], (err, res) => {
-          obs.next({});
+        obs.next({});
         // });
       });
     });

@@ -2,30 +2,30 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WelcomeComponent } from './welcome.component';
-import {AppModule} from "../app.module";
-import {APP_BASE_HREF} from "@angular/common";
-import {StateService} from "@uirouter/angular";
-import {HelperService} from "../helper.service";
-import {HelperServiceMock} from "../../test";
+import { AppModule } from '../app.module';
+import { APP_BASE_HREF } from '@angular/common';
+import { StateService } from '@uirouter/angular';
+import { HelperService } from '../helper.service';
+import { HelperServiceMock } from '../../test';
 
 describe('WelcomeComponent', () => {
   let component: WelcomeComponent;
   let fixture: ComponentFixture<WelcomeComponent>;
-  let element:any;
-  let stateServie:StateService;
+  let element: any;
+  let stateServie: StateService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [],
       imports: [
-        AppModule,
+        AppModule
       ],
       providers: [
-        {provide: APP_BASE_HREF, useValue : '/cesium' },
-        {provide: HelperService, useClass :HelperServiceMock }
+        { provide: APP_BASE_HREF, useValue: '/cesium' },
+        { provide: HelperService, useClass: HelperServiceMock }
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

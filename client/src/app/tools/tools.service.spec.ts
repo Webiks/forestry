@@ -1,28 +1,28 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { ToolsService } from './tools.service';
-import {HelperService} from "../helper.service";
-import {HelperServiceMock} from "../../test";
-import {HttpModule} from "@angular/http";
-import {AnimationHelperService} from "../animation-helper.service";
+import { HelperService } from '../helper.service';
+import { HelperServiceMock } from '../../test';
+import { HttpModule } from '@angular/http';
+import { AnimationHelperService } from '../animation-helper.service';
 
 describe('Service: Tools', () => {
-  let toolsService:ToolsService;
+  let toolsService: ToolsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
-      providers: [ToolsService,  {provide: HelperService, useClass :HelperServiceMock }, AnimationHelperService],
+      providers: [ToolsService, { provide: HelperService, useClass: HelperServiceMock }, AnimationHelperService]
     });
   });
 
-  beforeEach( inject([ToolsService], (_toolsService: ToolsService) => {
+  beforeEach(inject([ToolsService], (_toolsService: ToolsService) => {
     toolsService = _toolsService;
   }));
 
   it('should toolsService be defined', () => {
-    expect(toolsService ).toBeDefined();
+    expect(toolsService).toBeDefined();
   });
 
   it('should destroySubscribers() call 3 unsubscriber() functions', () => {

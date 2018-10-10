@@ -1,15 +1,15 @@
-.panel-body{
+.panel-body {
   display: flex;
   justify-content: center;
 
-  div.checkbox, input[type='range']{
+  div.checkbox, input[type='range'] {
     margin: 0 20px;
     width: 180px;
     display: flex;
     font-size: 12px;
     justify-content: center;
   }
-  label{
+  label {
     display: inline;
   }
 }
@@ -26,6 +26,10 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

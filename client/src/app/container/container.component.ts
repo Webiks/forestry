@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ToolsService} from "../tools/tools.service";
+import { ToolsService } from '../tools/tools.service';
 
 @Component({
   selector: 'app-container',
@@ -8,7 +8,8 @@ import {ToolsService} from "../tools/tools.service";
 })
 export class ContainerComponent implements OnInit {
 
-  constructor(private toolsService:ToolsService) { }
+  constructor(private toolsService: ToolsService) {
+  }
 
   ngOnInit() {
     this.toolsService.dataRastersAndVectors();

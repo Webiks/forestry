@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OpenlayersComponent } from './openlayers.component';
-import {JWBootstrapSwitchModule} from "jw-bootstrap-switch-ng2";
+import { JWBootstrapSwitchModule } from 'jw-bootstrap-switch-ng2';
 
 @NgModule({
   imports: [
@@ -10,4 +10,5 @@ import {JWBootstrapSwitchModule} from "jw-bootstrap-switch-ng2";
   ],
   declarations: [OpenlayersComponent]
 })
-export class OpenlayersModule { }
+export class OpenlayersModule {
+}

@@ -1,24 +1,23 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OpenlayersComponent } from './openlayers.component';
-import {AppModule} from "../app.module";
-import {HelperService} from "../helper.service";
-import * as ol from 'openlayers';
-import {Observable} from "rxjs";
-import {HelperServiceMock} from "../../test";
+import { AppModule } from '../app.module';
+import { HelperService } from '../helper.service';
+import { Observable } from 'rxjs';
+import { HelperServiceMock } from '../../test';
 
 describe('OpenlayersComponent', () => {
   let component: OpenlayersComponent;
   let fixture: ComponentFixture<OpenlayersComponent>;
-  let helperService:HelperService;
+  let helperService: HelperService;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [AppModule],
-      providers:[ {provide: HelperService, useClass :HelperServiceMock }]
+      providers: [{ provide: HelperService, useClass: HelperServiceMock }]
 
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -61,7 +60,7 @@ describe('OpenlayersComponent', () => {
          4. fly to layer bounds if need`, () => {
 
     spyOn(component, 'flyToLayer');
-    spyOn(helperService, 'getTmsmapresource').and.callFake(()=>{
+    spyOn(helperService, 'getTmsmapresource').and.callFake(() => {
       return new Observable<any>(obs => {
         obs.next({
           TileMap: {
@@ -70,36 +69,36 @@ describe('OpenlayersComponent', () => {
                 miny: -90,
                 minx: -180,
                 maxy: 90,
-                maxx: 180,
+                maxx: 180
               }
             }],
             TileSets: [
               {
                 TileSet: [
-                  {$:{order: 1}},
-                  {$:{order: 2}},
+                  { $: { order: 1 } },
+                  { $: { order: 2 } }
                 ]
               }]
           }
-        })
-      })
+        });
+      });
     });
-    let $event:{item:any, notFly?:boolean} =
-    {
-      item: {
-        url: 'base/src/assets/Test/TMS/ElRefugio_NUEVASec2_2agosto16_Comp',
-        type:'tms',
-        checked: true
-      },
-      notFly: true
-    };
+    let $event: { item: any, notFly?: boolean } =
+      {
+        item: {
+          url: 'base/src/assets/Test/TMS/ElRefugio_NUEVASec2_2agosto16_Comp',
+          type: 'tms',
+          checked: true
+        },
+        notFly: true
+      };
 
     expect($event.item.layer).toBeUndefined();
 
     // create tms with no flyTo!
     component.onClickTmsItem($event);
     expect($event.item.layer).toBeDefined();
-    expect(component.flyToLayer).not.toHaveBeenCalledWith({layer: $event.item.layer});
+    expect(component.flyToLayer).not.toHaveBeenCalledWith({ layer: $event.item.layer });
     expect(component.map.getLayers().getArray().indexOf($event.item.layer)).not.toEqual(-1);
 
 
@@ -115,8 +114,8 @@ describe('OpenlayersComponent', () => {
     //create tms (tile map service) on map with flyTo!
     component.onClickTmsItem($event);
     expect($event.item.layer).toBeDefined();
-    expect(component.flyToLayer).toHaveBeenCalledWith({layer: $event.item.layer});
-    expect(component.map.getLayers().getArray().indexOf($event.item.layer)).not.toEqual(-1)
+    expect(component.flyToLayer).toHaveBeenCalledWith({ layer: $event.item.layer });
+    expect(component.map.getLayers().getArray().indexOf($event.item.layer)).not.toEqual(-1);
 
   });
 

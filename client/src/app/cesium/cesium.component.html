@@ -1,3 +1,4 @@
 <img *ngIf="grid_image_url" [src]="grid_image_url" style="position: absolute;z-index: 1;opacity: .9;"/>
 
-<div id="cesiumContainer" [@fadeOutAnimation]="animationHelperService.fadeOutValue" (@fadeOutAnimation.done)="animationHelperService.leavingEmiter.emit()"></div>
+<div id="cesiumContainer" [@fadeOutAnimation]="animationHelperService.fadeOutValue"
+     (@fadeOutAnimation.done)="animationHelperService.leavingEmiter.emit()"></div>

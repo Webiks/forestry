@@ -8,9 +8,9 @@ describe('ApiHelperComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ApiHelperComponent ]
+      declarations: [ApiHelperComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
