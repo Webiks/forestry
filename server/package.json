@@ -1,0 +1,38 @@
+{
+  "name": "auto_gdal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "Q": "0.0.1",
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "compression": "^1.6.2",
+    "connect-busboy": "0.0.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "express-zip": "^2.0.1",
+    "fs": "0.0.1-security",
+    "gdal": "^0.9.3",
+    "gridfs-stream": "^1.1.1",
+    "jquery": "^3.1.1",
+    "jquery-file-download": "^1.4.6",
+    "lodash": "^4.17.2",
+    "mongoose": "^4.7.1",
+    "nodemon": "^1.11.0",
+    "ogr2ogr": "^1.0.0",
+    "path": "^0.12.7",
+    "request": "^2.79.0",
+    "rmdir-sync": "^1.0.1",
+    "rxjs": "^5.1.0",
+    "zip-folder": "^1.0.0"
+  }
+}
