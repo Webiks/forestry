@@ -1,0 +1,98 @@
+body{
+  background: rgb(234, 240, 254);
+}
+div.welcome {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  h1{
+    text-align: center;
+    //color: #9bb9ff;
+    font-family: Ariel;
+    font-width: 700;
+    font-weight: 700;
+    padding-top: 125px;
+    font-size: 60px;
+    //text-decoration: underline;
+    animation: from-top 0.5s;
+  }
+  h3{
+    text-align: center;
+    font-size: 32px;
+    padding-top: 50px;
+    opacity: 0;
+    animation: fadein 0.5s 0.5s;
+    animation-fill-mode: forwards;
+  }
+  div.images-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 5% 0;
+    .cesium, .leaflet, .openlayers {
+      position: absolute;
+      opacity: 0;
+      animation: fadein 0.5s 0.5s;
+      animation-fill-mode: forwards;
+      width: 30%;
+      height: 100%;
+      border: 2px solid #9bb9ff;
+      cursor: pointer;
+      transition: 1s;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border-radius: 5%;
+      top: 0;
+        &:hover {
+          background-color: #b4caff;
+        }
+    }
+    .cesium{
+      left:0;
+      &:hover {
+        width: 33%;
+      }
+      background-image: url("../../assets/cesium-logo.png");
+    }
+    .leaflet{
+      left: 35%;
+      &:hover {
+        top: -5%;
+        height: 110%;
+      }
+      background-image: url("../../assets/leafletjs.png");
+    }
+    .openlayers{
+      right: 0;
+      &:hover {
+        width: 33%;
+      }
+      background-image: url("../../assets/openlayers-logo.png");
+    }
+  }
+
+  footer{
+    opacity: 0;
+    margin: 10% 5%;
+    animation: fadein 0.5s 0.5s;
+  }
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes from-top {
+    from {
+      padding-top: 0;
+      opacity: 0;
+    }
+    to
+    { padding-top: 125px;
+      opacity: 1;
+    }
+  }
+
+}
+
+

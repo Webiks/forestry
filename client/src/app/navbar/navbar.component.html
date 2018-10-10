@@ -1,0 +1,15 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" uiSref="Welcome">Welcome</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li uiSrefActive="active" *ngFor="let state of app_states">
+        <a [uiSref]="state.name">{{getPureName(state.name)}}</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a class="logout" (click)="loginService.logOut()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>

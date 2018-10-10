@@ -1,0 +1,62 @@
+.cesium-viewer{
+  position: relative !important;
+}
+html{
+  height:100%;
+}
+body{
+  background: white;
+  background: linear-gradient(to bottom, white 0, rgba(211, 238, 246, 0.5) 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  .container{
+    width:85%;
+  }
+}
+#cesiumContainer {
+  .tms-btn {
+    font-size: 12px;
+  }
+  .list-group {
+    position: absolute;
+    top: 45px;
+    left: 3px;
+    z-index: 1;
+    width: 300px;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .list-group-item {
+      background-color: #303336;
+      color: #d9e9e9;
+      border-color: #444444;
+      &:hover {
+        color: #fff;
+        fill: #fff;
+        background: #48b;
+        border-color: #aef;
+        box-shadow: 0 0 8px #fff;
+      }
+      .checkbox {
+        width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+      }
+    }
+  }
+}
+
+footer{
+  margin: 40px 0;
+}
+
+div.progress-bar{
+  -webkit-transition: width .2s ease;
+  -o-transition: width .2s ease;
+  transition: width .2s ease;
+}

@@ -1,0 +1,15 @@
+<app-api-helper [mymap]="mymap" *ngIf="apiState()"></app-api-helper>
+
+
+<!--<div class="btn-group" dropdown autoClose="outsideClick">-->
+  <!--<button type="button" class="btn btn-default" dropdownToggle>-->
+    <!--{{selected_api_url}}<span class="caret"></span>-->
+  <!--</button>-->
+  <!--<ul dropdownMenu role="menu">-->
+    <!--<li role="menuitem" *ngFor="let item of [1,2,3,4]"><a class="dropdown-item" (click)="selected_api_url = item">{{item}}</a></li>-->
+  <!--</ul>-->
+<!--</div>-->
+
+
+
+<div id="leafletContainer" [@fadeOutAnimation]="animationHelperService.fadeOutValue" (@fadeOutAnimation.done)="animationHelperService.leavingEmiter.emit($event)"></div>

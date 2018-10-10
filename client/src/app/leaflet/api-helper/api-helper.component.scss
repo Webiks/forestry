@@ -1,0 +1,31 @@
+.panel-body{
+  display: flex;
+  justify-content: center;
+
+  div.checkbox, input[type='range']{
+    margin: 0 20px;
+    width: 180px;
+    display: flex;
+    font-size: 12px;
+    justify-content: center;
+  }
+  label{
+    display: inline;
+  }
+}
+
+.loader {
+  border: 12px solid #f3f3f3; /* Light grey */
+  border-top: 12px solid #3498db; /* Blue */
+  border-radius: 50%;
+  font-size: 0;
+  width: 12px;
+  height: 12px;
+
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

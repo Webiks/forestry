@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+  <div class="panel-heading">API</div>
+  <div class="panel-body">
+    <button class="btn btn-success" [disabled]="!finishLoading()" (click)="removeAll()" >remove all</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="api.tiles" (ngModelChange)="toggleTiles(api.tiles)"/>
+        tiles <br>
+      </label>
+      <span>{{LoadedTilesSize}} / {{TilesSize}} </span>
+      <div class="loader" *ngIf="!finishLoading()"></div>
+
+    </div>
+
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="api.squares" (ngModelChange)="toggleRectangles(api.squares)"/>
+        squares {{PointsSize}}
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="api.points" (ngModelChange)="togglePoints(api.points)"/>
+        points {{PointsSize}}
+      </label>
+    </div>
+    <input type="range" min="0" max="1" step="0.01" [disabled]="!finishLoading()" [(ngModel)]="api.prob" (change)="probChange(api.prob)" />{{api.prob}}
+  </div>
+</div>

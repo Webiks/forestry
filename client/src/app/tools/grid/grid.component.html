@@ -1,0 +1,16 @@
+<div id="grid_menu" class="btn-group" dropdown [(isOpen)]="isOpen" autoClose="outsideClick" >
+
+  <button id="singlesss" type="button" class="btn btn-default" dropdownToggle>
+    Grid <span class="caret"></span>
+  </button>
+
+  <ul role="menu" aria-labelledby="singlesss" dropdownMenu >
+    <li role="menuitem" *ngFor="let item of array">
+      <a class="checkbox">
+        <label>
+          <input type="checkbox" [(ngModel)]="item.checked" #checkbox (ngModelChange)="toolsService.gridEmmiter.emit(item)">{{item.name}}
+        </label>
+      </a>
+    </li>
+  </ul>
+</div>

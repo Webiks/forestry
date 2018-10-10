@@ -1,0 +1,20 @@
+.loader-back {
+  background: rgba(0, 0, 0, 0.49);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1005;
+  top: 0;
+  left: 0;
+  progressbar {
+    width: 350px;
+    position: absolute;
+    left: calc(50% - 175px);
+    top: calc(50% - 20px);
+    .progress-bar{
+      -webkit-transition: width .3s ease;
+      -o-transition: width .3s ease;
+      transition: width .3s ease;
+    }
+  }
+}

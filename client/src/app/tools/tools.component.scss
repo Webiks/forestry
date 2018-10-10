@@ -1,0 +1,19 @@
+.tools{
+  margin: 4px 0;
+  padding: 0 10px;
+  .btn-group{
+    margin: 20px 0;
+    ul{
+      z-index: 1001;
+      &.loading{
+        width: 220px;
+        height: 90px;
+        //background: rgba(91, 192, 222, 0.75);
+      }
+    }
+  }
+  p{
+    padding: 5px 10px;
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,14 @@
+.navbar{
+  margin-bottom: 0;
+  &.navbar-default{
+    background-color: rgba(211, 238, 246, 0.2);
+    border-color: rgb(211, 238, 246);
+    .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+      background-color: rgb(211, 238, 246)
+    }
+  }
+
+  .logout{
+    cursor: pointer;
+  }
+}
