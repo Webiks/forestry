@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  algorithmApi: 'http://34.241.33.42:5000/trees_url'
 };
 
 /*

@@ -3,8 +3,9 @@ import { Headers, Http, URLSearchParams } from '@angular/http';
 import 'rxjs/operator/map';
 import { Observable } from 'rxjs';
 import * as _ from 'lodash';
-// import * as xml2js from 'xml2js';
+import * as xml2js from 'xml2js';
 import 'rxjs/add/operator/map';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class HelperService {
@@ -19,7 +20,7 @@ export class HelperService {
     // `http://34.248.150.60:5000/trees_url?imageurl=${imageurl}`
     // http://34.250.142.20:5000/trees_url?imageurl=http://forestry.webiks.com:8007/DATA/upm/TMS/ElRefugio_Sec3_2ago16_COMP.tif/21/713959/848964.png
     // http://34.251.145.42
-    params.set('url', `http://34.244.81.19:5000/trees_url?imageurl=${imageurl}&prob=${prob}`);
+    params.set('url', `${environment.algorithmApi}?imageurl=${imageurl}&prob=${prob}`);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     return this.http.get(`${SERVER_BASE_URL}/api/getCoordinates`, {
       search: params,
@@ -47,9 +48,9 @@ export class HelperService {
   getTmsmapresource(url: string): Observable<any> {
     return new Observable<any>(obs => {
       this.http.get(`${SERVER_BASE_URL}/${url}/tilemapresource.xml`).toPromise().then(response => {
-        // xml2js.parseString(response['_body'], (err, res) => {
-        obs.next({});
-        // });
+        xml2js.parseString(response['_body'], (err, res) => {
+          obs.next(res);
+        });
       });
     });
 
